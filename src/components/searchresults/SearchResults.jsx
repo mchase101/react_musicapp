@@ -1,8 +1,19 @@
 import React from 'react'
+import Tracklist from '../tracklist/Tracklist'
+import './SearchResults.css'
 
-function SearchResults() {
+function SearchResults({searchResults, onAddTrack}) {
+  console.log(searchResults);
   return (
-    <div>SearchResults</div>
+    <div className="SearchResults">
+      <h2>Results</h2>
+      {/* Display the results in the form of a list */}
+      <Tracklist
+        listResults = {searchResults}
+        remove = {false}
+        onAddTrack = {onAddTrack}
+      />
+    </div>
   )
 }
 

@@ -1,25 +1,32 @@
 import React from 'react'
 import './Track.css';
 
-function Track() {
+function Track({ track, onAddTrack, remove, onRemoveTrack }) {
 
-  // TODO: renderAction function (27)
-  
+  function handleAddTrack() {
+    onAddTrack(track);
+  }
+
+  function handleRemoveTrack() {
+    onRemoveTrack(track);
+  }
+
   return (
     <div className="Track">
       <div className="Track-information">
         <h3>
-          {/* <!-- track name will go here --> */}Track Information
+          {/* <!-- track name will go here --> */}
+          {track.name}
         </h3>
         <p>
           {/* <!-- track artist will go here--> */} {/* <!-- track album will go here --> */}
-          Artist | Album
+          {track.artist} | {track.album}
         </p>
       </div>
-      <button className="Track-action">
-        {/* <!-- + or - will go here --> */}
-        +
-      </button>
+      {/* When remove === false */}
+      {(!remove) && <button onClick={handleAddTrack} className="Track-action">+</button>}
+      {/* When remove === true */}
+      {(remove) && <button onClick={handleRemoveTrack} className="Track-action">-</button>}
     </div>
   )
 }
