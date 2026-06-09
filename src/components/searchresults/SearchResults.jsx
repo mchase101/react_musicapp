@@ -3,7 +3,7 @@ import Tracklist from '../tracklist/Tracklist'
 import './SearchResults.css'
 
 function SearchResults({searchResults, onAddTrack}) {
-  console.log(searchResults);
+  
   return (
     <div className="SearchResults">
       <h2>Results</h2>

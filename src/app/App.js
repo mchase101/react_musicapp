@@ -115,7 +115,7 @@ function App() {
         album: "__",
         uri: "__"
       }]);
-    /* return alert("No results found"); //TODO - update the results in a clearer format*/
+   
 
     setSearchResults(results);
 
@@ -124,8 +124,7 @@ function App() {
 
   // Handle adding a track to playListTracks
   function onAddTrack(track) {
-    /* alert(track.artist); */
-
+   
     const foundTrack = playlistTracks.find(currentTrack => currentTrack.id === track.id);
 
     if (!foundTrack && track.name !== "No result found")
@@ -158,12 +157,6 @@ function App() {
     setSaveStatus(true);
   }
   
-  
-  
-  
-  
-  console.log(playlistTracks);
-
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
